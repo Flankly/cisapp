@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -14,6 +14,7 @@
         <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
         <meta name="theme-color" content="#231840">
         <link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet" />
+        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> 
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -22,7 +23,7 @@
 
     </head>
     <body>
-    	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #0390c6;">
+    	<nav class="navbar navbar-expand-lg navbar-light bg-dark" style="background-color: #0390c6;">
             <div class="navbar-brand m-0" href="#"></div>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -65,35 +66,17 @@
         </nav>
 
 <!-- sessão de video-->
+<div id="video" class="row">
+    <div class="col-md-8 col-sm-12" style="margin-top: 10px; margin-left: 10px;">
+        <video class="video-js" data-setup="{}" autoplay  height="450" controls>
+            <source src="../img/video.mkv" type="video/mp4"/>
+            O seu navegador não suporta este formato!
+        </video>
+    </div>
+</div>
+    </body>
 
-<!--
-
-Uses the latest versions of video.js and videojs-http-streaming.
-
-To use specific versions, please change the URLs to the form:
-
-<link href="https://unpkg.com/video.js@6.7.1/dist/video-js.css" rel="stylesheet">
-<script src="https://unpkg.com/video.js@6.7.1/dist/video.js"></script>
-<script src="https://unpkg.com/@videojs/http-streaming@0.9.0/dist/videojs-http-streaming.js"></script>
-
--->
-<video-js id="my_video_1" class="vjs-default-skin vjs-16-9" controls preload="auto" width="100%" height="350">
-  <source src="https://d2zihajmogu5jn.cloudfront.net/advanced-fmp4/master.m3u8" type="application/x-mpegURL">
-</video-js>
-  
-<script>
-  var player = videojs('my_video_1', {
-    html5: {
-      hls: {
-        overrideNative: true
-      }
-    }
-  });
-</script>
-
-
-
-<!--./sessão de video-->
+  <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
 
     </body>
 </html>
