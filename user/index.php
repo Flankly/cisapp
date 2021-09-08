@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
-<html>
+<html style="font-size: 13px;font-family: Roboto, Arial, sans-serif;">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +13,7 @@
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
         <meta name="theme-color" content="#231840">
+        <link rel="stylesheet" href="../style/css/custom.css"/>
         <link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet" />
         <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> 
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -21,37 +22,37 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
         <script src="../style/js/sweetalert2.all.min.js"></script>
 
+        
+
     </head>
-    <body>
-    	<nav class="navbar navbar-expand-lg navbar-light bg-dark" style="background-color: #0390c6;">
-            <div class="navbar-brand m-0" href="#"></div>
+    <!--remove o scroll de baixo-->
+    <style type="text/css">
+  body {
+    overflow-x:hidden;
+}
+</style>
+<body style="background-color:#231840;">
+     
+    	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent;" >
+            <div class="navbar-brand m-0" href="#" style="color: aliceblue;"></div>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="navbar-collapse collapse" id="navbarToggler" style="">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <div class="navbar-collapse collapse" id="navbarToggler"  >
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
                     <li class="nav-item ">
-                        <a class="nav-link" href="./?page=home">Menu Principal <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="./?page=home" style="color: aliceblue;" >Menu Principal <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="./?page=advance_search&amp;action=1">Oportunidades</a>
+                        <a class="nav-link" href="./?page=advance_search&amp;action=1" style="color: aliceblue;">Oportunidades</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="./?page=view_profile">Currículo</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="./?page=my_events">Meus Eventos</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="./?page=applicant_history">Histórico de Candidaturas</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="./?page=resume_attachments">Anexos</a>
+                        <a class="nav-link" href="./?page=resume_attachments" style="color: aliceblue;">Anexos</a>
                     </li>
                 </ul>
                                 <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
                         Alirio Micaela
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -66,17 +67,177 @@
         </nav>
 
 <!-- sessão de video-->
-<div id="video" class="row">
-    <div class="col-md-8 col-sm-12" style="margin-top: 10px; margin-left: 10px;">
-        <video class="video-js" data-setup="{}" autoplay  height="450" controls>
-            <source src="../img/video.mkv" type="video/mp4"/>
-            O seu navegador não suporta este formato!
-        </video>
+        <div class="row" style="margin-top: 1px; margin-left: 0.1em; margin-right: 1px;">
+        <div class="col-md-8">
+            <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/Eh7R2iyR_0Q"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          <!--  <video id="my-player" class="video-js vjs-big-play-centered vjs-fluid" data-setup="{}" autoplay  controls poster="../img/nostream.png">
+            
+                    </video>-->
+                  <!-- <video
+                    id="vid1"
+    class="video-js vjs-default-skin"
+    controls
+    width="560" height="315"
+    data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=iRusbYIyRNI"}] }'
+  >
+                    </video>-->
+                   <!-- <p style="color: aliceblue;font-size: 20px;padding-top: 3px;font-weight: bold;">
+                    Pastor António Jorge - Os pecados de Sanssão
+                </p>-->
+                </div>
+                <div style="padding-top: 2px;"></div>
+                <div class="col-md-4">
+                <div class="text-center" style="color: aliceblue;">
+                    <h2>Brevemente</h2>
+                    <br>
+                    <h1>O evento mais esperado do ano</h1>
+                
+                </div>
+                    <br>
+                    <!--slide-->
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <img src="../img/conf21.jpg" class="img-fluid d-block w-100"  alt="">
     </div>
+    <div class="carousel-item">
+    <img src="../img/img.jpg" class="img-fluid d-block w-100"  alt="">
+    </div>
+    <div class="carousel-item">
+    <img src="../img/img.jpg" class="img-fluid d-block w-100"  alt="">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
-    </body>
+                    <!--/slide-->
+                </div>
+            </div>
+            <div style="padding-top: 30px;"></div>
+    <!--parte dos outros videos-->
+    <div class="row" style="margin-top: 20px; margin-left: 0.1em; margin-right: 1px;">
+        <div class="col-sm-4">
+            <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/Eh7R2iyR_0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/ZsptlRRB1po" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/ZsptlRRB1po" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
-  <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
+    <!--depoimentos-->
+    <div style="padding-top: 30px;"></div>
+
+<div class="mb-1 bg-info  marketing" style="padding-top: 30px;padding-bottom: 30px;color: aliceblue; font-family:'customFont';background: linear-gradient(#290221, #152850);">
+    <div class="text-center">
+        
+        <h2>Os</h2>
+        <h1>Oradores</h1>
+        <div  style="padding-top: 30px;padding-bottom: 30px;"></div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-md-1">
+          </div><!-- /.col-lg-4 -->
+        <div class="col-md-2">
+          <img class="rounded-circle" src="img/1.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2>Alfa Thulana</h2>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-md-2">
+          <img class="rounded-circle" src="img/2.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2>Gerson Banze</h2>
+
+        </div><!-- /.col-lg-4 -->
+        <div class="col-md-2">
+          <img class="rounded-circle" src="img/3.jpg" alt="Generic placeholder image" width="150" height="150">
+          <h2>Gilden Zitha</h2>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-md-2">
+            <img class="rounded-circle" src="img/4.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2 style="font-family:'customFont';">Arafat Cossa</h2>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-md-2">
+            <img class="rounded-circle" src="img/5.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Gerson Nhantumbo</h2>
+          </div><!-- /.col-lg-4 -->
+      </div>
+</div>
+
+
+</div>
+
+
+
+    <!--/depoimentos-->
+
+
+
+              
 
     </body>
+    <script type="javascript" src="../style/js/custom.js"></script>
+    <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
+    <script>
+        $('.carousel').carousel({
+  interval: 2000
+})
+    </script>
+
+<br>
+    <br>   
+    <!--footer-->
+<footer class="text-center text-white">
+   <!--<p class=" text-center text-white">Siga-nos nas redes sociais.</p>--> 
+    <!-- Grid container -->
+    <div class="container p-2 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-1">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://facebook.com/cismz/" role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+
+         <!-- Youtube -->
+         <a class="btn btn-outline-light btn-floating m-1" href="https://www.youtube.com/channel/UC2voqXb1KrtbWfX6smBx2CA" role="button"
+         ><i class="fab fa-youtube"></i
+       ></a>
+  
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/cis_mz/" role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background: linear-gradient(#290221, #152850);">
+      <a class="text-white" href="https://caixadesabedoria.com/">Caixa de Sabedoria e Intelig&ecirc;ncia</a>
+      © 2021 
+    </div>
+    <!-- Copyright -->
+  </footer>
 </html>
