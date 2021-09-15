@@ -1,3 +1,24 @@
+<?php
+require('../login/estabilish.php');
+session_start();
+if(empty($_SESSION['email'])) {
+    echo "<script language=javascript>alert( 'Não tem parmissão para aceder a esta página...' );</script>";
+    echo "<script language=javascript>window.location.replace('../index.html');</script>";
+    //buscando o usuario logado
+    $sql = "select * from tb_usuario where us_email =".$_SESSION['email'];
+		$stmt = $db -> prepare($sql);
+		$stmt -> execute();
+		$dados = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+		
+
+    //determinando tipo de usuario!
+    $nome = '';
+		foreach($dados as $d){
+        $d['us_nome'] = $nome;
+    
+    }
+}
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -41,7 +62,7 @@
 
             <div class="navbar-collapse collapse" id="navbarToggler"  >
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
-                    <li class="nav-item ">
+                  <!--  <li class="nav-item ">
                         <a class="nav-link" href="./?page=home" style="color: aliceblue;" >Menu Principal <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item ">
@@ -49,18 +70,17 @@
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link" href="./?page=resume_attachments" style="color: aliceblue;">Anexos</a>
-                    </li>
+                    </li>-->
                 </ul>
                                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
-                        Alirio Micaela
+                        <?php echo $_SESSION['email']; ?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="./?page=view_profile">Ver Currículo</a>
-                        <a class="dropdown-item" href="./?page=create_profile">Editar Currículo</a>
-                        <a class="dropdown-item" href="./?page=resume_attachments">Meus Anexos</a>
+                        <a class="dropdown-item" href="./?page=view_profile">Perfil</a>
+                        <a class="dropdown-item" href="./?page=resume_attachments">Histórico</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="./?page=home&amp;action=logout">Sair</a>
+                        <a class="dropdown-item" href="../login/sair.php">Sair</a>
                     </div>
                 </div>
             </div>
@@ -69,9 +89,11 @@
 <!-- sessão de video-->
         <div class="row" style="margin-top: 1px; margin-left: 0.1em; margin-right: 1px;">
         <div class="col-md-8">
-            <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="853" height="480" src="https://www.youtube.com/embed/Eh7R2iyR_0Q"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/ZsptlRRB1po" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+             
             </div>
+           
           <!--  <video id="my-player" class="video-js vjs-big-play-centered vjs-fluid" data-setup="{}" autoplay  controls poster="../img/nostream.png">
             
                     </video>-->
@@ -86,6 +108,8 @@
                    <!-- <p style="color: aliceblue;font-size: 20px;padding-top: 3px;font-weight: bold;">
                     Pastor António Jorge - Os pecados de Sanssão
                 </p>-->
+                <br>
+                <font color="white"><h3>Pré Conferência 2021</h3></font>
                 </div>
                 <div style="padding-top: 2px;"></div>
                 <div class="col-md-4">
@@ -127,6 +151,9 @@
                 </div>
             </div>
             <div style="padding-top: 30px;"></div>
+
+
+
     <!--parte dos outros videos-->
     <div class="row" style="margin-top: 20px; margin-left: 0.1em; margin-right: 1px;">
         <div class="col-sm-4">
@@ -145,10 +172,10 @@
             </div>
         </div>
     </div>
+            </div>
 
     <!--depoimentos-->
-    <div style="padding-top: 30px;"></div>
-
+    <div style="padding-bottom:60px;"></div>
 <div class="mb-1 bg-info  marketing" style="padding-top: 30px;padding-bottom: 30px;color: aliceblue; font-family:'customFont';background: linear-gradient(#290221, #152850);">
     <div class="text-center">
         
@@ -161,7 +188,7 @@
         <div class="col-md-1">
           </div><!-- /.col-lg-4 -->
         <div class="col-md-2">
-          <img class="rounded-circle" src="img/1.jpg" alt="Generic placeholder image" width="140" height="140">
+          <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
           <h2>Alfa Thulana</h2>
         </div><!-- /.col-lg-4 -->
         <div class="col-md-2">
@@ -186,15 +213,7 @@
 
 
 </div>
-
-
-
     <!--/depoimentos-->
-
-
-
-              
-
     </body>
     <script type="javascript" src="../style/js/custom.js"></script>
     <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>

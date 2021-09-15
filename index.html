@@ -45,13 +45,13 @@
                       <!--<h5 class="card-title text-center mb-5 fw-light fs-5">Sign In</h5>-->
                       <img src="img/img.jpg" class="img-fluid " alt="">
                       <div style="padding-top: 15px;"></div>
-                      <form action="#" onsubmit="alerta();">
+                      <form action="login/index.php" onsubmit="" method="POST">
                         <div class="form-floating mb-3">
-                          <input type="email" class="form-control" id="floatingInput" placeholder="E-mail" required>
+                          <input type="email" class="form-control" id="floatingInput" placeholder="E-mail" name="email" required>
                          <!-- <label for="floatingInput">Email address</label>-->
                         </div>
                         <div class="form-floating mb-3">
-                          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>
                           <!--<label for="floatingPassword">Password</label>
                         </div>-->
           
@@ -76,9 +76,13 @@
                           </button>-->
                         </div>
                       </form>
+                      <p class="ml-4" style="color: aliceblue;"><a class="text-decoration-none" href="#">Esqueçeu a senha?</a></p>
                     </div>
+                    
                   </div>
+                  
                 </div>
+                
               </div>
             </div>
 
