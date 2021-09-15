@@ -33,7 +33,7 @@ if(empty($_SESSION['email'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
-        <meta name="theme-color" content="#231840">
+        <meta name="theme-color" content="black">
         <link rel="stylesheet" href="../style/css/custom.css"/>
         <link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet" />
         <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> 
@@ -48,16 +48,17 @@ if(empty($_SESSION['email'])) {
     </head>
     <!--remove o scroll de baixo-->
     <style type="text/css">
-  body {
+  html, body {
     overflow-x:hidden;
+    width:100%; height:100%; margin:0; padding:0;
 }
 </style>
-<body style="background-color:#231840;">
-     
+<body style="background-color:black;">
+    
     	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent;" >
-            <div class="navbar-brand m-0" href="#" style="color: aliceblue;"></div>
+            <div class="navbar-brand m-0" href="#" style="color:white;"></div>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon bg-info"></span>
             </button>
 
             <div class="navbar-collapse collapse" id="navbarToggler"  >
@@ -73,11 +74,11 @@ if(empty($_SESSION['email'])) {
                     </li>-->
                 </ul>
                                 <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
                         <?php echo $_SESSION['email']; ?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="./?page=view_profile">Perfil</a>
+                       <!-- <a class="dropdown-item" href="./?page=view_profile">Perfil</a>-->
                         <a class="dropdown-item" href="./?page=resume_attachments">Histórico</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="../login/sair.php">Sair</a>
@@ -85,7 +86,15 @@ if(empty($_SESSION['email'])) {
                 </div>
             </div>
         </nav>
+<!--video de welcome-->
+<div class="card" style="background-color:black;">
+<!-- The video -->
+<video autoplay muted loop id="myVideo" height="25%" width="100%">
+  <source src="../img/2020edit.mp4" type="video/mp4">
+</video>
+</div>
 
+<div style="padding-top:15px;"></div>
 <!-- sessão de video-->
         <div class="row" style="margin-top: 1px; margin-left: 0.1em; margin-right: 1px;">
         <div class="col-md-8">
@@ -114,9 +123,9 @@ if(empty($_SESSION['email'])) {
                 <div style="padding-top: 2px;"></div>
                 <div class="col-md-4">
                 <div class="text-center" style="color: aliceblue;">
-                    <h2>Brevemente</h2>
+                    <h2 class="display-4">Brevemente</h2>
                     <br>
-                    <h1>O evento mais esperado do ano</h1>
+                    <h1 class="display-5">O evento mais esperado do ano</h1>
                 
                 </div>
                     <br>
@@ -150,25 +159,35 @@ if(empty($_SESSION['email'])) {
                     <!--/slide-->
                 </div>
             </div>
-            <div style="padding-top: 30px;"></div>
-
-
+            <div  style="padding-top: 30px;padding-bottom: 30px;"></div>
+   <div class="row">
+     <div class="col-sm-12">
+            <div class="text-center" style="color: aliceblue;">
+        <h1 class="display-4">Assista as Conferências Anteriores</h1>
+        
+    </div>
+    </div>
+  </div>
 
     <!--parte dos outros videos-->
     <div class="row" style="margin-top: 20px; margin-left: 0.1em; margin-right: 1px;">
         <div class="col-sm-4">
+        &nbsp;
             <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="853" height="480" src="https://www.youtube.com/embed/Eh7R2iyR_0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/8SR568dHs10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <div class="col-sm-4">
+        &nbsp;
             <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="853" height="480" src="https://www.youtube.com/embed/ZsptlRRB1po" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/Q-UM16HJLuE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
+     
         <div class="col-sm-4">
+          &nbsp;
             <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="853" height="480" src="https://www.youtube.com/embed/ZsptlRRB1po" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/kJGcq0wjTP0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -188,24 +207,24 @@ if(empty($_SESSION['email'])) {
         <div class="col-md-1">
           </div><!-- /.col-lg-4 -->
         <div class="col-md-2">
-          <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
+          <img class="rounded-circle" src="../img/1.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Alfa Thulana</h2>
         </div><!-- /.col-lg-4 -->
         <div class="col-md-2">
-          <img class="rounded-circle" src="img/2.jpg" alt="Generic placeholder image" width="140" height="140">
+          <img class="rounded-circle" src="../img/2.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Gerson Banze</h2>
 
         </div><!-- /.col-lg-4 -->
         <div class="col-md-2">
-          <img class="rounded-circle" src="img/3.jpg" alt="Generic placeholder image" width="150" height="150">
+          <img class="rounded-circle" src="../img/3.jpg" alt="Generic placeholder image" width="150" height="150">
           <h2>Gilden Zitha</h2>
         </div><!-- /.col-lg-4 -->
         <div class="col-md-2">
-            <img class="rounded-circle" src="img/4.jpg" alt="Generic placeholder image" width="140" height="140">
+            <img class="rounded-circle" src="../img/4.jpg" alt="Generic placeholder image" width="140" height="140">
             <h2 style="font-family:'customFont';">Arafat Cossa</h2>
           </div><!-- /.col-lg-4 -->
           <div class="col-md-2">
-            <img class="rounded-circle" src="img/5.jpg" alt="Generic placeholder image" width="140" height="140">
+            <img class="rounded-circle" src="../img/5.jpg" alt="Generic placeholder image" width="140" height="140">
             <h2>Gerson Nhantumbo</h2>
           </div><!-- /.col-lg-4 -->
       </div>
