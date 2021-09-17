@@ -135,6 +135,8 @@ require('../login/estabilish.php');
         if($pagina == 'adicionarusuario'){require_once 'adicionarUsuarios.php';}
         if($pagina == 'editarusuario'){require_once 'editarUsuarios.php';}
         if($pagina == 'informacao'){require_once 'informacaoUsuarios.php';}
+        if($pagina == 'pes'){require_once 'pesquisarUsuarios.php';}
+        
 
     } catch (Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";

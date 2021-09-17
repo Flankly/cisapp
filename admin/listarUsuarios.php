@@ -29,7 +29,7 @@
     <tr>
       <th scope="col">Nome</th>
       <th scope="col">Email</th>
-      <th scope="col">Status</th>
+      <th scope="col">Contactos</th>
       <th scope="col">Data de Registro</th>
       <th scope="col">Ultimo Acesso</th>
       <th scope="col">Acção</th>
@@ -51,16 +51,16 @@ if ($verificacao < 1){
   
 
         foreach ($dados as $d) {
-            echo "<tr>";
+            echo "<tr style='font-size:12px;'>";
             echo "<td>" . $d['us_nome'] . "</td>";
             echo "<td>" . $d['us_email'] . "</td>";
-            echo "<td>" . $d['us_contact1'] . "</td>";
+            echo "<td>" . $d['us_contact1'] . "/". $d['us_contact2'] ."</td>";
             echo "<td>" . $d['us_created'] . "</td>";
             echo "<td>" . $d['us_created'] . "</td>";
             echo "<td>
             <a href='?p=editarusuario&id=".$d['us_id']."' data-toggle='tooltip' data-placement='top' title='Editar'><i class='fas fa-edit'></i></a> &nbsp;
             <a href='?p=informacao&id=".$d['us_id']."' data-toggle='tooltip' data-placement='top' title='Informação'><i class='fa fa-info' aria-hidden='true'></i></a>&nbsp;
-            <a data-toggle='tooltip' data-placement='top' title='Apagar'><i class='fa fa-times' aria-hidden='true'></i></a>
+            <a  data-toggle='tooltip' data-placement='top' title='Apagar'><i class='fa fa-times' aria-hidden='true'></i></a>
             </td>";
             echo "</tr>";
         }
@@ -71,5 +71,11 @@ if ($verificacao < 1){
   </tbody>
 </table>
 
+<style>
+  tr:hover{
+    color: blue;
+
+  }
+</style>
 
 </div>

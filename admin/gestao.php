@@ -5,9 +5,9 @@
 
 <div class="card-header"><i class="fa fa-user" aria-hidden="true"></i> Utilizadores</div>
   <div class="card-body">
-  <form class="" method="post">
+  <form class="" method="post" action="?p=pes">
       <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="" aria-label="Search" required>
+        <input class="form-control form-control-navbar" type="search" placeholder="" aria-label="Search" name="pesq" required>
         &nbsp;
           <input class="btn btn-navbar btn-danger btn-sm" type="submit" value="Pesquisar"> 
         </div>
@@ -37,7 +37,7 @@
 
 <div class="card-header"><i class="fa fa-video" aria-hidden="true"></i>&nbsp;Videos</div>
   <div class="card-body">
-  <form class="" method="post">
+  <form class="" method="get" action="">
       <div class="input-group input-group-sm">
         <input class="form-control form-control-navbar" type="search" placeholder="" aria-label="Search" required>
         &nbsp;
