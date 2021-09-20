@@ -94,7 +94,7 @@ if (empty($_SESSION['email'])) {
   <div class="row" style="margin-top: 1px; margin-left: 0.1em; margin-right: 1px;">
     <div class="col-md-8">
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="853" height="480" src="https://www.youtube.com/embed/ZsptlRRB1po" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="853" height="480" src="https://www.youtube.com/embed/qgbDIXhjRTk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
       </div>
 
