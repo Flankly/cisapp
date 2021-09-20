@@ -20,7 +20,7 @@ require('../login/estabilish.php');
         <title>CIS - Administração</title>
         <meta name="description" content="Conferencia 2021">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="img/favicon.ico" type="image/x-icon">
         <meta name="theme-color" content="#231840">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -65,7 +65,7 @@ require('../login/estabilish.php');
                         <a class="dropdown-item" href="./?page=view_profile">Perfil</a>
                         <a class="dropdown-item" href="./?page=resume_attachments">Histórico</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="../login/sair.php">Sair</a>
+                        <a class="dropdown-item" href="../login/sair.php?e=<?php echo $_SESSION['email']; ?>">Sair</a>
                     </div>
                 </div>
             </div>

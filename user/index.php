@@ -76,7 +76,7 @@ if (empty($_SESSION['email'])) {
           <!-- <a class="dropdown-item" href="./?page=view_profile">Perfil</a>-->
           <a class="dropdown-item" href="./?page=resume_attachments">Histórico</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="../login/sair.php">Sair</a>
+          <a class="dropdown-item" href="../login/sair.php?e=<?php echo $_SESSION['email']; ?>">Sair</a>
         </div>
       </div>
     </div>
