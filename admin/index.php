@@ -136,12 +136,14 @@ require('../login/estabilish.php');
         if($pagina == 'editarusuario'){require_once 'editarUsuarios.php';}
         if($pagina == 'informacao'){require_once 'informacaoUsuarios.php';}
         if($pagina == 'pes'){require_once 'pesquisarUsuarios.php';}
+        if($pagina == 'listarvds'){require_once 'listarVideos.php';}
+        if($pagina == 'adicionarvds'){require_once 'adicionarVideos.php';}
+        if($pagina == 'pesvds'){require_once 'pesquisarVideos.php';}
+        if($pagina == 'editvideo'){require_once 'editarVideos.php';}
         
-
     } catch (Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
-  
       ?>
       
       <!--/--->

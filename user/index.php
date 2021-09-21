@@ -114,7 +114,7 @@ if (empty($_SESSION['email'])) {
                 </p>-->
       <br>
       <font color="white">
-        <h3>Pré Conferência 2021</h3>
+        <h3>Pré-Conferência 2021 / Com: Gilden Zitha e Gerson Nhantumbo</h3>
       </font>
     </div>
     <div style="padding-top: 2px;"></div>
@@ -171,14 +171,34 @@ if (empty($_SESSION['email'])) {
     <div class="col-sm-4">
       &nbsp;
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="853" height="480" src="https://www.youtube.com/embed/8SR568dHs10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
+      <iframe width="853" height="480" src="https://www.youtube.com/embed/ZsptlRRB1po" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       </div>
     </div>
     <div class="col-sm-4">
       &nbsp;
       <div class="embed-responsive embed-responsive-16by9">
         <iframe width="853" height="480" src="https://www.youtube.com/embed/Q-UM16HJLuE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
+    </div>
+
+    <div class="col-sm-4">
+      &nbsp;
+      <div class="embed-responsive embed-responsive-16by9">
+      <iframe width="853" height="480" src="https://www.youtube.com/embed/872kR0HHqcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <div class="col-sm-4">
+      &nbsp;
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/8SR568dHs10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      &nbsp;
+      <div class="embed-responsive embed-responsive-16by9">
+      <iframe width="853" height="480" src="https://www.youtube.com/embed/mgHz4P5atDI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     </div>
 
     <div class="col-sm-4">
