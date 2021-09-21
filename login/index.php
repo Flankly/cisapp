@@ -61,8 +61,8 @@ if (extract($_POST)) {
 					$_SESSION['email'] = $_POST['email'];
 
 					//inserir dados de acesso 
-					$sql = "INSERT INTO `tb_acesso` (`ac_nome`, `ac_ip`, `ac_created`, `ac_exit`) 
-					VALUES ('$email', '$ip', current_timestamp(), current_timestamp())";
+					$sql = "INSERT INTO `tb_acesso` (`ac_id`, `ac_nome`, `ac_ip`, `ac_created`, `ac_exit`) 
+					VALUES (NULL, '$email', '$ip', current_timestamp(), '')";
 					$stmt = $db->prepare($sql);
 					$stmt->execute();
 					//pagina do administrador
