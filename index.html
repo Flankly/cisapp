@@ -76,6 +76,7 @@
                           </button>-->
                         </div>
                       </form>
+                      <p class="ml-4" style="color: aliceblue;margin-bottom: -1px;"><a class="text-decoration-none" onclick="popup()"  href="#">Criar uma conta</a>
                       <p class="ml-4" style="color: aliceblue;"><a class="text-decoration-none" href="#">Esqueçeu a senha?</a></p>
                     </div>
                     
@@ -86,15 +87,14 @@
               </div>
             </div>
 
-            <script>
-                function alerta(){
-                    Swal.fire(
-                         'Erro',
-                         'As suas credenciais são inválidas!',
-                         'error'
-                         )
-                        }
-            </script>
+<!--janela de scripts-->
+<script languague="javascript">
+function popup(){
+window.open('user/adduser.php','popup','width=500,height=600,scrolling=auto,top=0,left=0')
+}
+</script>
+          
+
 <div style="padding-top:20px;"></div>
             <footer class="text-center text-white">
                 <!--<p class=" text-center text-white">Siga-nos nas redes sociais.</p>--> 

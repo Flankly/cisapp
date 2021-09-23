@@ -120,7 +120,7 @@ if (empty($_SESSION['email'])) {
     <div style="padding-top: 2px;"></div>
     <div class="col-md-4">
       <div class="text-center" style="color: aliceblue;">
-        <h2 class="display-4">Brevemente</h2>
+        <h2 class="">Brevemente</h2>
         <br>
         <h1 class="display-5">O evento mais esperado do ano</h1>
 
@@ -160,7 +160,7 @@ if (empty($_SESSION['email'])) {
   <div class="row">
     <div class="col-sm-12">
       <div class="text-center" style="color: aliceblue;">
-        <h1 class="display-4">Assista as Conferências Anteriores</h1>
+        <h1 class="">Assista as Conferências Anteriores</h1>
 
       </div>
     </div>
