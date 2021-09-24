@@ -24,12 +24,12 @@
 <body class="container">
     <div style="padding-top: 20px;"></div>
 <?php
-if ($nome= @$_GET['n'] and $email= @$_GET['e']) {
+if (!empty($nome= @$_GET['n'] and $email= @$_GET['e'])) {
    
         echo "
         <div class='alert alert-success' role='alert'>
   <h4 class='alert-heading'>Parabéns $nome!</h4>
-  <p>Criou com êxito a sua conta, no entanto pedimos que confirme o seu email $email de forma a valida-la...<br>
+  <p>Criou com êxito a sua conta, no entanto pedimos que confirme o seu email <b>$email</b> de forma a valida-la...<br>
   Faça um bom uso desta plataforma, e que a mesma possa ajuda-te a mudar de vida.<br>
   <br>
   </p>
@@ -38,6 +38,8 @@ if ($nome= @$_GET['n'] and $email= @$_GET['e']) {
 </div>
         
         ";
+    }else{
+        echo "<script language=javascript>window.location.replace('../');</script>";
     }
 
 ?>

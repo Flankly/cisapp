@@ -5,7 +5,6 @@ if (empty($_SESSION['email'])) {
   echo "<script language=javascript>alert( 'Não tem parmissão para aceder a esta página...' );</script>";
   echo "<script language=javascript>window.location.replace('../index.html');</script>";
   //buscando o usuario logado
-
 }
 ?>
 <!DOCTYPE html>

@@ -1,20 +1,21 @@
 <?php
 require('estabilish.php');
 //função para pegar o ip do visitante em php
-function getRealIpAddr(){
-	if ( !empty($_SERVER['HTTP_CLIENT_IP']) ) {
-	 // Check IP from internet.
-	 $ip = $_SERVER['HTTP_CLIENT_IP'];
-	} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']) ) {
-	 // Check IP is passed from proxy.
-	 $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+function getRealIpAddr()
+{
+	if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+		// Check IP from internet.
+		$ip = $_SERVER['HTTP_CLIENT_IP'];
+	} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+		// Check IP is passed from proxy.
+		$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
 	} else {
-	 // Get IP address from remote address.
-	 $ip = $_SERVER['REMOTE_ADDR'];
+		// Get IP address from remote address.
+		$ip = $_SERVER['REMOTE_ADDR'];
 	}
 	return $ip;
-   }
-   $ip = getRealIpAddr();
+}
+$ip = getRealIpAddr();
 
 if (extract($_POST)) {
 	$email = $_POST['email'];
@@ -38,8 +39,14 @@ if (extract($_POST)) {
 		}
 		//se a conta estiver desactivada
 		if ($guarda_estado != 'Activa') {
-			//mandar ele para a area de suspensos
-			header("Location: ../user/suspenso.html");
+
+			//conta não activa
+			if ($guarda_estado == 'Espera') {
+				header("Location: ../user/unvalidate.html");
+			} else {
+
+				header("Location: ../user/suspended.html");
+			}
 		} else {
 			//conta activa
 			//buscando todos dados do usuario
@@ -54,6 +61,7 @@ if (extract($_POST)) {
 
 
 				if ($d['us_tipo'] ==  'Administrator') {
+					
 					//se for administrador
 					//iniciar a sessão
 					session_start();
@@ -67,7 +75,6 @@ if (extract($_POST)) {
 					$stmt->execute();
 					//pagina do administrador
 					header("Location:../admin/");
-
 				} else {
 					//se for um usuario comum
 					//iniciar a sessão
@@ -93,4 +100,3 @@ if (extract($_POST)) {
 	//sem nenhum valor no post
 	header("Location:../");
 }
-

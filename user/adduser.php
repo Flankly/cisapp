@@ -159,15 +159,27 @@ if (isset($submit)) {
 				}
 
 				$codValidacao =  generateRandomString();  // OR: generateRandomString(24)
+				$milliseconds = round(microtime(true) * 1000); // gera milesegundos
+				$codigo = $codValidacao . $milliseconds;
 				//inserir credenciais
 				$sql = "INSERT INTO `tb_login` (`lo_id`, `id_us`, `email_us`, `lo_senha`, `lo_estado`,`lo_codValida`, `lo_created`)VALUES 
 				(null, '$guarda_id', ?, ?, 'Espera',?, current_timestamp())";
 				$stmt = $db->prepare($sql);
 				$stmt->bindParam(1, $email);
 				$stmt->bindParam(2, $password);
-				$stmt->bindParam(3, $codValidacao);
+				$stmt->bindParam(3, $codigo);
 				//repost de erros de ultima acção
 				if ($stmt->execute()) {
+					
+					//envio de email dos dados
+					$assunto = "Validação do E-mail";
+					$link = "https://live.caixadesabedoria.com/user/confirm.php?validation=" . $codigo;
+					$mensagem = "Este e-mail é de validação do seu cadastro na nossa plataforma. Porfavor,
+					 click no link para validar o seu email e activar a sua conta! ".$link;
+					$header = "From: conferencia2021@caixadesabedoria.com";
+
+					mail($email, $assunto, $mensagem, $header);
+
 					//area de sucesso apos a validação
 					echo "<script language=javascript>window.location.replace('successadd.php?n=$nome&e=$email');</script>";
 				} else {
