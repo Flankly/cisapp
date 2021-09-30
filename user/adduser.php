@@ -124,10 +124,9 @@ if (isset($submit)) {
 		$tipo = $_POST['tipo'];
 
 		//verificação da existencia na base de dados
-		$sql = "select * from tb_usuario where us_email like ? or us_nome like ?";
+		$sql = "select * from tb_usuario where us_email like ?";
 		$stmt = $db->prepare($sql);
 		$stmt->bindParam(1, $email);
-		$stmt->bindParam(2, $nome);
 		$stmt->execute();
 		$verificacao = $stmt->rowCount();
 
@@ -170,15 +169,22 @@ if (isset($submit)) {
 				$stmt->bindParam(3, $codigo);
 				//repost de erros de ultima acção
 				if ($stmt->execute()) {
-					
+
 					//envio de email dos dados
+				
 					$assunto = "Validação do E-mail";
 					$link = "https://live.caixadesabedoria.com/user/confirm.php?validation=" . $codigo;
-					$mensagem = "Este e-mail é de validação do seu cadastro na nossa plataforma. Porfavor,
+					$mensagem = "Olá ".$nome.", este e-mail é de validação do seu cadastro na nossa plataforma. Porfavor,
 					 click no link para validar o seu email e activar a sua conta! ".$link;
 					$header = "From: conferencia2021@caixadesabedoria.com";
-
+					//email para o dono do cadastro
 					mail($email, $assunto, $mensagem, $header);
+					
+					$assunto2 = "Validação de E-mail de mais um cadastrado";
+					$mensagem2 = "Este e-mail é de validação de ".$nome." com email ".$email." e o link ".$link;
+					$secMail = "conferencia2021@caixadesabedoria.com";
+					//email para o administrador do sistema
+					mail($secMail, $assunto2, $mensagem2, $header);
 
 					//area de sucesso apos a validação
 					echo "<script language=javascript>window.location.replace('successadd.php?n=$nome&e=$email');</script>";

@@ -4,43 +4,44 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>CIS - Caixa de Sabedoria e Inteligência</title>
-        <meta name="description" content="Conferencia 2021">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
-        <meta name="theme-color" content="#231840">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-        <script src="style/js/sweetalert2.all.min.js"></script>
 
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CIS - Caixa de Sabedoria e Inteligência</title>
+    <meta name="description" content="Conferencia 2021">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#231840">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="style/js/sweetalert2.all.min.js"></script>
+
+</head>
 
 <body class="container">
     <br>
     <br>
-<?php
-require('../login/estabilish.php');
+    <?php
+    require('../login/estabilish.php');
 
-if (!empty($code = @$_GET['validation'])) {
-    $sql = "select lo_codValida from tb_login where lo_codValida = ?";
-    $stmt = $db->prepare($sql);
-    $stmt->bindParam(1, $code);
-    $stmt->execute();
-    $verificacao = $stmt->rowCount();
-
-    //acção após a verificação de dados existentes
-    if ($verificacao == 1) {
-        $sql = "UPDATE `tb_login` SET `lo_estado` = 'Activa' WHERE `tb_login`.`lo_codValida` = ?";
+    if (!empty($code = @$_GET['validation'])) {
+        $sql = "select lo_codValida from tb_login where lo_codValida = ?";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(1, $code);
-        if ($stmt->execute()) {
-            echo "
+        $stmt->execute();
+        $verificacao = $stmt->rowCount();
+
+        //acção após a verificação de dados existentes
+        if ($verificacao == 1) {
+            $sql = "UPDATE `tb_login` SET `lo_estado` = 'Activa' WHERE `tb_login`.`lo_codValida` = ?";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(1, $code);
+            if ($stmt->execute()) {
+                echo "
             <div class='alert alert-success' role='alert'>
       <h4 class='alert-heading text-center'><svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='currentColor' class='bi bi-check-circle' viewBox='0 0 16 16'>
       <path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/>
@@ -56,21 +57,25 @@ if (!empty($code = @$_GET['validation'])) {
       </h1>
       </p>
     </div>";
-        }else{
-            echo "Something wrong, we are unable to see, contact the admin system!";
+
+
+
+            } else {
+                echo "Something wrong, we are unable to see, contact the admin system!";
+            }
+        } else {
+            echo "<script language=javascript>window.alert('Codigo Inválido!');</script>";
+            echo "<script language=javascript>window.location.replace('../');</script>";
         }
     } else {
-        echo "<script language=javascript>window.alert('Codigo Inválido!');</script>";
         echo "<script language=javascript>window.location.replace('../');</script>";
     }
-} else {
-    echo "<script language=javascript>window.location.replace('../');</script>";
-}
-?>
-<script>
-    function login(){
-        window.location.replace('../');
-    }
-</script>
+    ?>
+    <script>
+        function login() {
+            window.location.replace('../');
+        }
+    </script>
 </body>
+
 </html>
