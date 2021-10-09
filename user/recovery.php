@@ -80,7 +80,7 @@ if($erro == 'nrencovery'){echo "
                 <p class="login-box-msg">Se esqueçeu da sua senha? Insira o seu email...</p>
                 <form action="#" method="post">
                     <div class="input-group mb-3">
-                        <input type="email" name="email" class="form-control" placeholder="Email">
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>

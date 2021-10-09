@@ -176,7 +176,7 @@ require('../login/estabilish.php');
 
 <div style="padding-top:10px;"></div>
         </body>
-        <footer>
+        <footer class="fixed-bottom">
         <div class="text-center p-3" style="background: linear-gradient(#290221, #152850);">
       <a class="text-white" href="https://caixadesabedoria.com/">Caixa de Sabedoria e Intelig&ecirc;ncia</a>
     </div>

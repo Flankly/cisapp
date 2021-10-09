@@ -46,7 +46,7 @@ if($erro=@$_GET['e']){
     <tbody>
       <?php
       //visualizar dados da tabela usuario
-      $sql = "select * from tb_usuario";
+      $sql = "select * from tb_usuario left join tb_acesso on us_email = ac_nome group by us_nome order by ac_id desc";
       $stmt = $db->prepare($sql);
       $stmt->execute();
 
@@ -64,7 +64,7 @@ if($erro=@$_GET['e']){
           echo "<td>" . $d['us_email'] . "</td>";
           echo "<td>" . $d['us_contact1'] . "/" . $d['us_contact2'] . "</td>";
           echo "<td>" . $d['us_created'] . "</td>";
-          echo "<td>" . $d['us_created'] . "</td>";
+          echo "<td>" . $d['ac_created']. "</td>";
           echo "<td>
             <a href='?p=editarusuario&id=" . $d['us_id'] . "' data-toggle='tooltip' data-placement='top' title='Editar'><i class='fas fa-edit'></i></a> &nbsp;
             <a href='?p=informacao&id=" . $d['us_id'] . "' data-toggle='tooltip' data-placement='top' title='Informação'><i class='fa fa-info' aria-hidden='true'></i></a>&nbsp;

@@ -17,10 +17,16 @@
     <link rel="stylesheet" href="../style/css/custom.css" />
     <link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet" />
     <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
     <script src="../style/js/sweetalert2.all.min.js"></script>
 </head>
 
@@ -49,10 +55,10 @@
 Senha redefinida com exito...
 <br>
 <br>
-<button type='button' class='btn btn-success btn-lg btn-block' onclick='login();'>Faça Login</button>
+<a href='../'><input type='button' class='btn btn-success btn-lg btn-block' value='Faça Login'></a>
 </h1>
 </p>
-<
+
 </div>";
                 exit;
             }
@@ -60,74 +66,77 @@ Senha redefinida com exito...
         ?>
     </div>
 
-        <?php
+    <?php
         if ($vd = @$_GET['validation'] && $em = @$_GET['e'] && $id = @$_GET['id']) { ?>
 
 
-            <div class="d-flex justify-content-center">
-                <div class="login-box">
-                    <div class="login-logo">
-                    </div>
-                    <!-- /.login-logo -->
-                    <div class="card">
-                        <div class="card-body login-card-body">
-                            <p class="login-box-msg">You are only one step a way from your new password, recover your password now.</p>
-
-                            <form method="post">
-                                <div class="input-group mb-3">
-                                    <input type="password" name="password" class="form-control" placeholder="Password">
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <span class="fas fa-lock"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <input type="submit" class="btn btn-primary btn-block" value="Change password">
-                                    </div>
-                                    <!-- /.col -->
-                                </div>
-                            </form>
-
-                            <p class="mt-3 mb-1">
-                                <a href="../">Login</a>
-                            </p>
-                        </div>
-                        <!-- /.login-card-body -->
-                    </div>
-                </div>
+    <div class="d-flex justify-content-center">
+        <div class="login-box">
+            <div class="login-logo">
             </div>
-            <script>
-                function login() {
-                    window.location.replace('../');
-                }
-            </script>
-        <?php
-            //toquen de acesso
-          
+            <!-- /.login-logo -->
+            <div class="card">
+                <div class="card-body login-card-body">
+                    <p class="login-box-msg">Porfavor insira a sua nova senha...</p>
 
+                    <form method="post">
+                        <div class="input-group mb-3">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <input type="submit" name="submit" class="btn btn-primary btn-block" value="Modificar a senha">
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                    </form>
+
+                    <p class="mt-3 mb-1">
+                        <a href="../">Login</a>
+                    </p>
+                </div>
+                <!-- /.login-card-body -->
+            </div>
+        </div>
+    </div>
+    <script>
+        function login() {
+            window.location.replace('../');
+        }
+    </script>
+    <?php
             require('../login/estabilish.php');
             extract($_POST);
             if (isset($submit)) {
-                $codValidacao =  generateRandomString();  // OR: generateRandomString(24)
-                $milliseconds = round(microtime(true) * 1000); // gera milesegundos
-                $codigo = $codValidacao . $milliseconds;
+
+                #gerador de codigo de validação
+				function generateRandomString($length = 24)
+				{
+					return substr(str_shuffle(str_repeat($x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length / strlen($x)))), 1, $length);
+				}
+				$codValidacao =  generateRandomString();  // OR: generateRandomString(24)
+				$milliseconds = round(microtime(true) * 1000); // gera milesegundos
+				$codigo = $codValidacao . $milliseconds;
 
                 $password = $_POST['password'];
 
-                $sql = "UPDATE `tb_login` SET `lo_senha` = ?, `lo_codValida` = ? WHERE `lo_id` = ?";
+                $sql = "UPDATE `tb_login` SET `lo_senha` = ?, `lo_codValida` = ? WHERE `id_us` = ?";
                 $stmt = $db->prepare($sql);
                 $stmt->bindParam(1, $password);
                 $stmt->bindParam(2, $codigo);
                 $stmt->bindParam(3, $id);
 
-                if ($stmt->exeute()) {
+                if ($stmt->execute()) {
                     echo "<script language=javascript>window.location.replace('setrecovery.php?er=rencovery');</script>";
                 }else{
-                    echo "<script language=javascript>window.alert('ERROR');</script>";
+                    echo "<script language=javascript>window.alert('Não foi possivel actualizar a senha!');</script>";
                 }
             }else{
-                echo "<script language=javascript>window.alert('ERROR');</script>";
+                echo "<script language=javascript>window.alert('Sem dados válidos!');</script>";
             }
         } ?>
